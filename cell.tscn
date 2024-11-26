@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cfdu4m6ryno5y"]
+
+[node name="Cell" type="Label"]
+offset_right = 123.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "123"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(57, 0, 0, 0, 0, 46, 123, 46, 123, 0, 53, 0)
+width = 1.0
+default_color = Color(0, 0, 0, 1)

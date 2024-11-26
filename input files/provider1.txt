@@ -1,0 +1,5 @@
+Product,Price,Quantity
+product1,25.30,20
+product2,49.00,53
+product3,14.85,45
+product5,24.20,11

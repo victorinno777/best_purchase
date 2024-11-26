@@ -1,0 +1,124 @@
+[gd_scene load_steps=2 format=3 uid="uid://s42rn5ivayy6"]
+
+[ext_resource type="Script" path="res://Scene.gd" id="1_lonhy"]
+
+[node name="Scene" type="Node2D"]
+script = ExtResource("1_lonhy")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 649.0
+color = Color(0.662745, 0.662745, 0.662745, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="UI"]
+offset_left = 601.0
+offset_top = 39.0
+offset_right = 1112.0
+offset_bottom = 606.0
+
+[node name="Table" type="Control" parent="UI"]
+anchors_preset = 0
+offset_left = 601.0
+offset_top = 40.0
+offset_right = 1113.0
+offset_bottom = 610.0
+
+[node name="TextEdit" type="TextEdit" parent="UI"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 309.0
+offset_right = 367.0
+offset_bottom = 360.0
+
+[node name="PredictButton" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 452.0
+offset_right = 293.0
+offset_bottom = 501.0
+text = "PREDICT SALES"
+
+[node name="ProviderButton" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 451.0
+offset_right = 503.0
+offset_bottom = 500.0
+text = "CHOOSE PROVIDERS"
+
+[node name="CheckBox" type="CheckButton" parent="UI"]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 269.0
+offset_right = 374.0
+offset_bottom = 293.0
+
+[node name="Label2" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 2.925
+anchor_right = 1.0
+anchor_bottom = 2.925
+offset_left = 63.0
+offset_top = 11.0
+offset_right = 231.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 19
+text = "Loaded files"
+
+[node name="Label3" type="Label" parent="UI"]
+offset_left = 104.0
+offset_top = 411.0
+offset_right = 304.0
+offset_bottom = 441.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 19
+text = "Calculate"
+
+[node name="Label" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 265.0
+offset_right = 305.0
+offset_bottom = 295.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 19
+text = "Input quantity scaling"
+
+[node name="Files" type="OptionButton" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.375
+anchor_top = 4.575
+anchor_right = -2.375
+anchor_bottom = 4.575
+offset_left = 198.0
+offset_top = -21.0
+offset_right = 387.0
+offset_bottom = 28.0
+alignment = 1
+item_count = 4
+popup/item_0/text = "Provider1"
+popup/item_0/id = 0
+popup/item_1/text = "Provider2"
+popup/item_1/id = 1
+popup/item_2/text = "Sales1"
+popup/item_2/id = 2
+popup/item_3/text = "Demand1"
+popup/item_3/id = 3
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="UI/PredictButton" to="." method="_on_order_button_button_down"]
+[connection signal="button_down" from="UI/ProviderButton" to="." method="_on_provider_button_button_down"]
+[connection signal="toggled" from="UI/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="item_selected" from="UI/Files" to="." method="_on_files_item_selected"]
